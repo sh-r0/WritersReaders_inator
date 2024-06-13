@@ -19,7 +19,7 @@ pthread_mutex_t mutex_g;
 pthread_cond_t readersCond_g;
 pthread_cond_t writersCond_g;
 
-// Program 1 - zaglodzenie pisarzy
+// Program 3 - brak zaglodzenia
 
 //fflush(stdout)
 
