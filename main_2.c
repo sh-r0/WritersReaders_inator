@@ -19,13 +19,11 @@ pthread_mutex_t mutex_g;
 pthread_cond_t readersCond_g;
 pthread_cond_t writersCond_g;
 
-// Program 1 - zaglodzenie pisarzy
-
-//fflush(stdout)
+// Program 2 - zaglodzenie pisarzy
 
 //inline
 void printState() {
-    printf("Waiting: %i readers %i writers\nIn: %i readers %i writers\n\n", readersWaiting_g, writersWaiting_g, readersInLib_g, writersInLib_g);
+    printf("ReaderQ:%i WriterQ:%i   [in:R:%i   W:%i]\n\n", readersWaiting_g, writersWaiting_g, readersInLib_g, writersInLib_g);
     fflush(stdout);
     return;
 }

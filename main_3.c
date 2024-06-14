@@ -21,11 +21,9 @@ pthread_cond_t writersCond_g;
 
 // Program 3 - brak zaglodzenia
 
-//fflush(stdout)
-
 //inline
 void printState() {
-    printf("Waiting: %i readers %i writers\nIn: %i readers %i writers\n\n", readersWaiting_g, writersWaiting_g, readersInLib_g, writersInLib_g);
+    printf("ReaderQ:%i WriterQ:%i   [in:R:%i   W:%i]\n\n", readersWaiting_g, writersWaiting_g, readersInLib_g, writersInLib_g);
     fflush(stdout);
     return;
 }
