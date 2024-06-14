@@ -112,9 +112,18 @@ int32_t main(int32_t _argc, char** _argv){
     writersInLib_g = 0, readersInLib_g = 0;
     writersWaiting_g = 0, readersWaiting_g = 0;
 
-    pthread_mutex_init(&mutex_g, NULL);
-    pthread_cond_init(&readersCond_g, NULL);
-    pthread_cond_init(&writersCond_g, NULL);
+    if(pthread_mutex_init(&mutex_g, NULL) != 0) {
+        printf("Error initializing mutex!\nClosing!\n");
+        return -1;
+    }
+    if(pthread_cond_init(&readersCond_g, NULL) != 0) {
+        printf("Error initializing global variables!\nClosing!\n");
+        return -1;
+    }
+    if(pthread_cond_init(&writersCond_g, NULL) != 0) {
+        printf("Error initializing global variables!\nClosing!\n");
+        return -1;
+    }
 
     pthread_t writerThreads[writersNum_g];
     pthread_t readerThreads[readersNum_g];
